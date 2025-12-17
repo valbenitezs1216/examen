@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+.container {
+    display: flex;
+    width: 100vw;   
+    height: 100vh;  
+    overflow: hidden;
+}
+
+/* --- PANEL IZQUIERDO --- */
+.left-panel {
+    flex: 1.2; /* Un poco más ancho para lucir la imagen */
+    background-color: #c4e1e2; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Contenedor del Título Curvo */
+.curved-text-container {
+    width: 100%;
+    max-width: 650px;
+    position: absolute;
+    top: 10%; 
+    z-index: 10;
+}
+
+.curved-title {
+    font-family: 'Georgia', serif;
+    fill: #333;
+    font-size: 48px; /* Texto más grande */
+    font-weight: bold;
+}
+
+/* Imagen Agrandada */
+.image-circle {
+    width: 450px; /* Imagen más grande */
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1; 
+    margin-top: 60px; /* Ajuste para el texto curvo */
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- PANEL DERECHO --- */
+.right-panel {
+    flex: 1;
+    background-color: #232941; 
+    color: #fff;
+    padding: 0 10%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.menu-header h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    width: fit-content;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex; 
+    flex-direction: column;
+    gap: 25px; 
+}
+
+.main-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em; 
+    transition: all 0.3s ease;
+}
+
+.main-menu a:hover {
+    color: #9705c0; 
+    padding-left: 15px; 
+}
+
+/* --- RESPONSIVO --- */
+.curved-text-container {
+    width: 110%; /* Un poco más ancho que el contenedor para que la H respire */
+    max-width: 750px;
+    position: absolute;
+    top: 5%; /* Ajusta esto si el texto queda muy arriba o muy abajo */
+    z-index: 10;
+    pointer-events: none; /* Permite hacer clic a través del SVG si es necesario */
+}
+
+.curved-title {
+    font-family: 'Georgia', serif;
+    fill: #333;
+    font-size: 30px; /* Si sigue cortándose, baja ligeramente a 42px */
+    font-weight: bold;
+    text-transform: none; /* Asegura que respete la mayúscula de la H */
+}
+
+.image-circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 80px; /* Espacio para que el arco de texto encaje arriba */
+    overflow: hidden;
+    z-index: 1;
+}
